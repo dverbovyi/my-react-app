@@ -9,7 +9,7 @@ class Home extends Component {
       <div>
         <h2>Home Page</h2>  
         <p className="App-intro">
-          To get started, click to generate a unique session link
+          To get started
         </p>
         <Button/>
       </div>
