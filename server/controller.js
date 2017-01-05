@@ -1,15 +1,12 @@
 module.exports = {
-    getAccounts,
-    getRoles,
+    generateSession,
     notFound
 }
 
-function getAccounts(req, res) {
-    res.json(require('./dummy-data/accounts.json'));
-}
-
-function getRoles(req, res) {
-    res.json(require('./dummy-data/roles.json'));
+function generateSession(req, res) {
+    res.json({
+        token: 'dsfsdfevdsv1231233wefsdfc3244'
+    });
 }
 
 function notFound(req, res) {

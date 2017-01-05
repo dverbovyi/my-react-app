@@ -7,6 +7,7 @@ import { CanvasPage } from './containers/canvas'
 export default (
   <Route path="/" component={App}>
     <IndexRoute component={HomePage} />
-    <Route path="canvas" component={CanvasPage} />
+    <Route path="/:token" component={CanvasPage} />
+    <Route path="*" component={HomePage} />
   </Route>
 )

@@ -1,25 +1,18 @@
 process.env.NODE_ENV = 'test';
 
 const request = require('supertest'),
-    app = require('./app'),
-    accountsMocks = require('./dummy-data/accounts.json'),
-    rolesMocks = require('./dummy-data/roles.json');
+    app = require('./app');
 
 describe('#API TESTS', () => {
-  describe('Accounts', () => {
+  describe('Session', () => {
     it('should answer on GET', done => {
       request(app)
-        .get('/api/accounts')
-        .expect(200, accountsMocks, done)
+        .post('/api/token')
+        .expect(200, {
+          "token": "dsfsdfevdsv1231233wefsdfc3244"
+        }, done)
     })
   });
-  describe('Roles', () => {
-    it('should answer on GET', done => {
-      request(app)
-        .get('/api/roles')
-        .expect(200, rolesMocks, done)
-    })
-  })
   describe('404', () => {
     it('should return status 404 if resource not found', done => {
       request(app)

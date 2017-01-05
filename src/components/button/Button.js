@@ -1,11 +1,13 @@
-import React from 'react'
-import { Link } from 'react-router'
+import React, { PropTypes } from 'react'
 import './Button.css';
 
-export const Button = () => (
+export const Button = ({text, onClick}) => (
   <div className="button">
-    <Link to='/canvas'>
-      <button>Open canvas</button>
-    </Link>
+      <button onClick={onClick}>{text}</button>
   </div>
 )
+
+Button.propTypes = {
+    text: PropTypes.string.isRequired,
+    onClick: PropTypes.func
+}

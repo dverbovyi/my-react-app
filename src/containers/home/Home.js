@@ -1,20 +1,31 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { Button } from '../../components/button';
+import { generateToken } from '../../actions'
+import { Intro } from '../../components/intro';
 
 class Home extends Component {
-
+  onButtonClick() {
+    this.props.generateToken();
+  }
   render() {
+    const { token } = this.props;
+
     return (
       <div>
-        <h2>Home Page</h2>  
-        <p className="App-intro">
-          To get started
-        </p>
-        <Button/>
+        <h2>Welcome</h2>
+        <div className="App-intro">
+          <Intro token={token} onClick={this.onButtonClick.bind(this)} />
+        </div>
       </div>
     )
   }
 }
 
-export const HomePage = connect()(Home)
+const mapStateToProps = (state, ownProps) => ({
+  token: state.session.token,
+  isFetching: state.session.isFetching
+});
+
+export const HomePage = connect(mapStateToProps, {
+  generateToken
+})(Home);

@@ -8,6 +8,6 @@ export const Header = () => (
     <Link to='/'>
       <img src={logo} className="App-logo" alt="logo" />
     </Link>
-    <h2>Welcome to React</h2>
+    <h2>Mobile Gyroscope reader</h2>
   </div>
 )
