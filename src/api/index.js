@@ -1,6 +1,6 @@
-import { API_CONFIG } from '../consts/config';
+import config from '../consts/config';
 
-const baseUrl = `${API_CONFIG.HOST}/api`;
+const baseUrl = `${config.HOST}:${config.PORT}/api`;
 
 export const API = {
     generateToken,

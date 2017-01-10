@@ -1,0 +1,4 @@
+module.exports = {
+    SEND_TO_SERVER: 'SEND_TO_SERVER',
+    SEND_TO_CLIENT: 'SEND_TO_CLIENT'
+}
