@@ -8,6 +8,7 @@
     "test:client": "node scripts/test.js --env=jsdom",
     "test:server": "node ./node_modules/mocha/bin/mocha ./server/test.spec.js && npm run coverage:server",
     "server": "node server/app.js",
+    "host": "ngrok http 4000",
     "coverage:server": "istanbul cover _mocha server/**/*.spec.js -- --timeout 5000 && istanbul report lcov"
   },
   "dependencies": {
